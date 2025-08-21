@@ -1,0 +1,28 @@
+{
+  "name": "cross_com",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build:tailwind":"tailwindcss -i ./src/input.css -o ./src/public/assets/styles/tailwind.css",
+    "dev:tailwind": "tailwindcss -i ./src/input.css -o ./src/public/assets/styles/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.14.3",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
