@@ -17,7 +17,7 @@ form.addEventListener("submit", (e) => {
   btn.disabled = true;
   btn.innerHTML = "Enviando...";
 
-  fetch(`http://crosscom.up.railway.app/api/resenia`, {
+  fetch(`https://crosscom.up.railway.app//api/resenia`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
