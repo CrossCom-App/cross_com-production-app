@@ -11,3 +11,14 @@ body{
     font-size: 4vw;
   }
 }
+
+@media screeb and (max-height: 1500px) {
+  nav{
+    height: 15vh;
+  }
+}
+@media screen and (max-height: 700px) {
+  nav{
+    height: 20vh;
+  }
+}
