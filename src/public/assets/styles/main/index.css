@@ -54,8 +54,9 @@
 
 @media (max-width: 640px) {
   .book_mark {
+    background-color: var(--color-bookmaark);
     width: 12%;
-    height: 30%;
+    height: 20%;
     left: 6%;
   }
   .cardsSect .quote1,
@@ -68,6 +69,7 @@
   .cardsSect .quote8,
   .cardsSect .quote9,
   .cardsSect .quote10 {
+    position: relative;
     transform: none !important;
     margin-bottom: 1.5rem;
     z-index: 1;

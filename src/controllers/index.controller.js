@@ -7,3 +7,6 @@ export const getAbout = (req, res) => {
 export const getQuotes = (req, res) => {
     res.render('quotes');
 }
+export const getResenias = (req, res) => {
+    res.render('resenia');
+}

@@ -1,0 +1,15 @@
+.steps{
+    transform: scale(107%);
+}
+.steps div{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+button:disabled{
+    background-color: var(--color-base-two);
+}

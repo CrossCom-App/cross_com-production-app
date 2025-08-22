@@ -1,5 +1,6 @@
 //importando la aplicacion
 import app from './app.js';
+import 'dotenv/config';
 
 //Iniciando el servidor
 app.listen(3000);

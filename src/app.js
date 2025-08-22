@@ -6,6 +6,8 @@ import "ejs";
 import { fileURLToPath } from 'url';
  //Rutas
 import indexRoutes from './routes/index.routes.js';
+import apiRoutes from './routes/api.routes.js';
+import morgan from 'morgan';
 
 //Configuracion de rutas
 const __filename = fileURLToPath(import.meta.url);
@@ -19,12 +21,15 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 //Middlewares
+app.use(morgan("dev"));
+ //express middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use("/public/", express.static(path.join(__dirname, "public")));
 
 //Rutas
 app.use(indexRoutes);
+app.use("/api/", apiRoutes);
 
 //Exportacion
 export default app;
