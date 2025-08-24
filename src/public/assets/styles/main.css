@@ -1,24 +1,44 @@
-body{
-    overflow-x: hidden;
-    background-color: var(--color-base);
+body {
+  overflow-x: hidden;
+  background-color: var(--color-base);
 }
 .book_mark {
   clip-path: polygon(0% 100%, 50% 50%, 100% 100%, 100% 0, 0 0);
 }
-@media (max-width: 500px) {
-  .linkList{
-    flex-wrap: wrap;
-    font-size: 4vw;
-  }
+.linkList li {
+  transition: 0.2s all ease;
+}
+.linkList li:hover {
+  transform: translateY(-20%);
 }
 
-@media screeb and (max-height: 1500px) {
-  nav{
-    height: 15vh;
+@media (max-width: 925px) {
+  .linkList li {
+    white-space: nowrap;
   }
-}
-@media screen and (max-height: 700px) {
-  nav{
-    height: 20vh;
+  .shadow-overlay {
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary),
+      #00000000,
+      #00000000,
+      #00000000,
+      var(--color-primary)
+    );
+  }
+  .linkList {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 7px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: var(--radius-md);
+      background-color: var(--color-secondary);
+    }
+  }
+  .linkList li:hover{
+    transform: none;
   }
 }

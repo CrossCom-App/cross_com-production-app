@@ -9,6 +9,9 @@ form.addEventListener("submit", (e) => {
   const title = dataForm.get("title");
   const description = dataForm.get("description");
 
+  title.replace("<", "&lt;").replace(">", "&gt;");
+  description.replace("<", "&lt;").replace(">", "&gt;");
+
   const reqBody = {
     title,
     description,
@@ -23,21 +26,34 @@ form.addEventListener("submit", (e) => {
       "content-type": "application/json",
     },
     body: JSON.stringify(reqBody),
-  }).then((res) => {
-    console.log(res);
-    btn.disabled = false;
+  })
+    .then((res) => {
+      console.log(res);
+      btn.disabled = false;
 
-    btn.innerHTML = "Enviar";
-    if (res.ok) {
-      swal.fire({
-        icon: "success",
-        title: "Reseña enviada correctamente",
-      })
-    } else {
+      btn.innerHTML = "Enviar";
+      if (res.ok) {
+        form.querySelector("[name=title]").value = "";
+        form.querySelector("[name=description]").value = "";
+
+        swal.fire({
+          icon: "success",
+          title: "Reseña enviada correctamente",
+        });
+      } else {
+        swal.fire({
+          icon: "error",
+          title: "Error al enviar la reseña. Intertar luego",
+        });
+      }
+    })
+    .catch(() => {
+      btn.innerHTML = "Enviar";
+      btn.disabled = false;
+
       swal.fire({
         icon: "error",
-        title: "Error al enviar la reseña. Intertar luego"
-      })
-    }
-  });
+        title: "Error al enviar la reseña. Intertar luego",
+      });
+    });
 });

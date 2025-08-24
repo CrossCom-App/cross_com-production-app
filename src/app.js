@@ -31,5 +31,10 @@ app.use("/public/", express.static(path.join(__dirname, "public")));
 app.use(indexRoutes);
 app.use("/api/", apiRoutes);
 
+//404
+app.use((req,res) => {
+    res.render("not-found");
+});
+
 //Exportacion
 export default app;
