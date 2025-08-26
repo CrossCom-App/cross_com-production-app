@@ -1,21 +1,43 @@
 <nav
-  class="w-screen bg-primary text-base p-2 h-[8vh] flex justify-start gap-10 items-center shadow-md shadow-primary select-none"
+  class="navigation w-screen bg-primary text-base p-2 h-[8vh] flex justify-start gap-10 items-center shadow-md shadow-primary select-none"
 >
-  <img
+  <!-- <img
     src="/public/assets/svg/crosscom-logo.svg"
     class="h-[7vh] w-[7vh] rounded-full"
   />
-  <div class="linkList relative flex justify-around items-center gap-8 text-2xl px-20">
     <ul
       class="linkList flex justify-around items-center gap-8"
     >
-      <div class="absolute top-0 left-0 w-full h-full shadow-overlay"></div>
       <li><a href="/">Inicio</a></li>
       <li><a href="/about">Nosotros</a></li>
       <li><a href="/versiculos">Versiculos</a></li>
       <li><a href="/resenias">Reseñas</a></li>
       <li><a href="/donations">donaciones</a></li>
       <li><a href="/day-verse">Versiculo del dia</a></li>
-    </ul>
-  </div>
+    </ul> -->
+
+  <img
+    src="/public/assets/svg/crosscom-logo.svg"
+    class="h-[7vh] w-[7vh] rounded-full z-20"
+  />
+
+  <h1 class="text-2xl z-20">CrossCom</h1>
+  <button id="btnMenu" onclick="seeMenu()">
+    <span
+      class="material-symbols-outlined bg-secondary p-2 rounded-full relative z-20"
+    >
+      menu
+    </span>
+  </button>
+
+  <menu
+    class="linkMenu duration-100 absolute w-full h-full top-0 right-full bg-primary z-10 flex flex-col justify-center items-center text-3xl gap-3"
+  >
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/about">Nosotros</a></li>
+    <li><a href="/versiculos">Versiculos</a></li>
+    <li><a href="/resenias">Reseñas</a></li>
+    <!-- <li><a href="/donations">donaciones</a></li>
+    <li><a href="/day-verse">Versiculo del dia</a></li> -->
+  </menu>
 </nav>
